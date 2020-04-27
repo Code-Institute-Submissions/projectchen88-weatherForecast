@@ -1,1 +1,16 @@
-alert('linked');
+dataSource = "https://api.data.gov.sg/v1/environment/2-hour-weather-forecast"
+data =[]
+
+//AXIO TO GET DATA FROM JSON FILE (local)
+function getData(callback) {
+  axios.get(dataSource)
+    .then(function(response) {
+      let result = response.data;
+      console.log(result)
+      callback(result)
+    })
+}
+
+getData( function(data){
+    console.log (data)
+})
