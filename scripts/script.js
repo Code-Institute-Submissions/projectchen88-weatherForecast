@@ -1,5 +1,5 @@
-dataSource = "https://api.data.gov.sg/v1/environment/2-hour-weather-forecast"
-data =[]
+var dataSource = "https://api.data.gov.sg/v1/environment/2-hour-weather-forecast"
+var data =[]
 
 //AXIO TO GET DATA FROM JSON FILE (local)
 function getData(callback) {
@@ -11,6 +11,14 @@ function getData(callback) {
     })
 }
 
-getData( function(data){
-    console.log (data)
+getData( function(data) {
+    let status = data.api_info.status
+    let forecasts = data.items[0].forecasts
+
+    console.log(status)
+    console.log(forecasts)
+})
+
+$(function() { 
+  alert('jquery set up')
 })
