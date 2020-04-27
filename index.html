@@ -9,34 +9,40 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-   <!--Custom CSS-->
+    <!--Custom CSS-->
     <link rel="stylesheet" href="styles/style.css" type="text/css" />
     <title>Hello, world!</title>
 </head>
 
 <body>
-    <main class='container-fluid p-5'>
-        <div class="mx-auto">
-        <h1 class='btn btn-danger w-50'> Weather Report Live ! </h1>
+    <main id='main-page' class='container-fluid p-5'>
+        <!--Header-->
+        <div class="row">
+            <div class="col-8 p-5 mx-auto">
+                <span class='btn btn-danger w-100'><h1>Weather Report Live ! </h1></span>
+            </div>
+        </div>
+        
+        <!--Current Weather -->
+        <div class="row">
             
-        <div> Air Quality in Singapore : <span id='status'></span></div>
-        
-        <hr/>
-        
-        <div>
+            
+            
+            <div class='col-4'> Air Quality in Singapore : <span id='status'></span></div>
+            <hr/>
             <div>
-                <select id="select">
+                <div>
+                    <select id="select">
                     <option>Choose a location</option>
                 </select>
+                </div>
+                <div>
+                    <p id='weather'></p>
+                </div>
             </div>
-            <div>
-                <p id='weather'></p>
-            </div>
-        </div>
-        
         </div>
     </main>
-    
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

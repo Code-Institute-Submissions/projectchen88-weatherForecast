@@ -12,7 +12,7 @@ function getForecast(callback) {
   axios.get(source1)
     .then(function(response) {
       let result = response.data;
-      // console.log(result)
+      console.log(result)
       callback(result)
     })
 }
@@ -20,7 +20,7 @@ function getTemp(callback) {
   axios.get(source2)
     .then(function(response) {
       let result = response.data.items[0].forecasts;
-      console.log(result)
+      // console.log(result)
       callback(result)
     })
 }
@@ -42,3 +42,15 @@ getForecast( function(forecastData) {
     })
 })
 
+$ (function () {
+  $('#select').on('click', function (){
+    let weather = ""
+    for (let item in forecastData){
+      if ( $('#select').val() == forecastData[item].area){
+        weather = forecastData[item].area
+      }
+    }
+    $('#weather').text(forecastData)
+  })
+  
+})
