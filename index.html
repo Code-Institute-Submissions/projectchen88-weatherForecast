@@ -18,29 +18,58 @@
     <main id='main-page' class='container-fluid p-5'>
         <!--Header-->
         <div class="row">
-            <div class="col-8 p-5 mx-auto">
+            <div class="col-md-8 col-12 p-md-5 p-3 mx-auto">
                 <span class='btn btn-danger w-100'><h1>Weather Report Live ! </h1></span>
             </div>
         </div>
-        
+
         <!--Current Weather -->
         <div class="row">
-            
-            
-            
-            <div class='col-4'> Air Quality in Singapore : <span id='status'></span></div>
-            <hr/>
-            <div>
-                <div>
-                    <select id="select">
-                    <option>Choose a location</option>
-                </select>
-                </div>
-                <div>
-                    <p id='weather'></p>
+            <div class="col-12 px-5 py-4 bg-secondary text-light rounded">
+                <h3>Today's Weather is <span id='status'></span></h3>
+                <h6 id='dateToday' class='font-italic'></h6>
+            </div>
+            <div id='display-section' class="col-12 p-3 bg-transparent">
+                <div class="box row">
+                    <!--Check and display weather of location selected-->
+                    <div class="box col-md-4 col-12 mx-auto text-center">
+                        <div class="box p-5 bg-light rounded">
+                            <h5>Check Location</h5>
+                            <div >
+                                <select class='form-control' id="select">
+                                    <option>Where ?</option>
+                                </select>
+                            </div>
+                            <div class='display-box p-5 bg-secondary'>
+                                <h1 id='weather' class='font-bolder text-light'></h1>   
+                            </div>                            
+                        </div>
+                    </div>
+                    
+                    <!--Display 4 days forecast-->
+                    <div class="box col-md-8 col-12 mx-auto text-center">
+                        <div class="box p-5 bg-light rounded">
+                            <h5>Next 4 days Forecast</h5>
+                            <div class='display-box p-5'>
+                                <div class="row">
+                                    <div class="col-3"> Today's Forecast : 
+                                        <span id='forecast'></span>
+                                    </div>
+                                    <div class="col-3"> 
+                                        <span id='humidity'></span>
+                                    </div>
+                                    <div class="col-3"></div><span id='temperature'></span></div>
+                                    <div class="col-3"></div><span id='wind'></span></div>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
+                    
+                    
                 </div>
             </div>
         </div>
+
     </main>
 
 
