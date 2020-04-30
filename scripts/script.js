@@ -25,19 +25,23 @@ function getTemp(callback) {
       callback(result)
     })
 }
+function displayDailyForecast( day ) {
+  document.getElementById("forecast-title").innerHTML=tempData[day].date
+  document.getElementById("forecast").innerHTML=tempData[day].forecast
+  document.getElementById("humidity-high").innerHTML=tempData[day].relative_humidity.high
+  document.getElementById("humidity-low").innerHTML=tempData[day].relative_humidity.low
+  document.getElementById("temperature-high").innerHTML=tempData[day].temperature.high
+  document.getElementById("temperature-low").innerHTML=tempData[day].temperature.low
+  document.getElementById("wind-direction").innerHTML=tempData[day].wind.direction
+  document.getElementById("wind-speed-high").innerHTML=tempData[day].wind.speed.high
+  document.getElementById("wind-speed-low").innerHTML=tempData[day].wind.speed.low
 
+}
 getTemp(function(data){
   tempData = data;
-  
+  tempData.count = 0 // tracker for the day result that is displayed
+  displayDailyForecast (tempData.count)
   document.getElementById("forecast").innerHTML=tempData[0].forecast
-  document.getElementById("humidity-high").innerHTML=tempData[0].relative_humidity.high
-  document.getElementById("humidity-low").innerHTML=tempData[0].relative_humidity.low
-  document.getElementById("temperature-high").innerHTML=tempData[0].temperature.high
-  document.getElementById("temperature-low").innerHTML=tempData[0].temperature.low
-  document.getElementById("wind-direction").innerHTML=tempData[0].wind.direction
-  document.getElementById("wind-speed-high").innerHTML=tempData[0].wind.speed.high
-  document.getElementById("wind-speed-low").innerHTML=tempData[0].wind.speed.low
-  
 })
 
 getForecast( function(data) {
@@ -57,6 +61,7 @@ getForecast( function(data) {
 })
 
 $ (function () {
+  $('#prev-day').hide();
   
   // Set the date of today to be displayed
   var d = new Date();
@@ -83,13 +88,25 @@ $ (function () {
   })
   
   // Detect for change to view. forecast for next day
-  var dateCount = 0 // Set count as 0 to represent today
-  
-  $('#next-day').on('click', function () {
-    alert ("next day")
+  $('#next-day').click( function () {
+    if (tempData.count < 3) {
+      tempData.count ++ ;
+      displayDailyForecast(tempData.count)
+      if (tempData.count >= 3) {
+        $('#next-day').hide()
+      } 
+      $('#prev-day').show()
+    }
   })
   
   $('#prev-day').on('click', function () {
-    alert ("previous day")
+   if (tempData.count >= 0) {
+      tempData.count -- ;
+      displayDailyForecast(tempData.count)
+      if (tempData.count <= 0 ) {
+        $('#prev-day').hide()
+      } 
+      $('#next-day').show()
+    }
   })
 })
