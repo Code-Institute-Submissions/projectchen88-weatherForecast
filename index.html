@@ -34,10 +34,10 @@
             <div id='display-section' class="col-12 p-3">
                 <div class="box row">
                     <!--Check and display weather of location selected-->
-                    <div class="box col-md-4 col-12 mx-auto text-center">
+                    <div class="box col-md-4 col-12 mx-auto text-center ">
                         <div class="box p-5 bg-light rounded">
                             <h5>Check Location</h5>
-                            <div >
+                            <div>
                                 <select class='form-control border-0' id="select">
                                     <option>Where ?</option>
                                 </select>
@@ -46,68 +46,61 @@
                                 <!--<p id='weather' class='font-bolder text-light'></p>   -->
                                 <p class='p-5 bg-secondary text-light rounded font-weight-bolder' id='weather'>&nbsp</p>
 
-                            </div>                            
+                            </div>
                         </div>
                     </div>
-                    
+
                     <!--Display 4 days forecast-->
-                    <div class="box col-md-8 col-12 mx-auto text-center">
-                        <div class="box p-5 bg-light rounded">
-                            <div class='display-box'>
-                                <div class="row">
-                                    <div class="col-5"> 
-                                        <h5>Forecast for date :</h5>
-                                        <div class='d-flex justify-content-center'>
-                                            <div id='prev-day' class='text-primary'><< &nbsp</div>
-                                            <h5 id='forecast-title'> </h5>
-                                            <div id= 'next-day' class='text-primary'> &nbsp >> </div>
-                                        </div>
-                                        <div>
-                                            <p class='p-5 bg-secondary text-light rounded font-weight-bolder' id='forecast'></p>
-                                        </div>
-                                    </div>
-                                    <div class="col-7"> 
-                                        <div class='d-flex'>
-                                            <h5>Humidity High: </h5>
-                                            <span id='humidity-high'></span>
-                                        </div>
-                                        <div class='d-flex'>
-                                            <h5>Humidity Low: </h5>
-                                            <span id='humidity-low'></span>
-                                        </div>
-                                        <div class='d-flex'>
-                                            <h5>Temperature (high): </h5>
-                                            <span id='temperature-high'></span>
-                                        </div>
-                                        <div class='d-flex'>
-                                            <h5>Temperature (low): </h5>
-                                            <span id='temperature-low'></span>
-                                        </div>
-                                        <div class='d-flex'>
-                                            <h5>Wind (direction): </h5>
-                                            <span id='wind-direction'></span>
-                                        </div>                                        
-                                        <div class='d-flex'>
-                                            <h5>Wind (high): </h5>
-                                            <span id='wind-speed-high'></span>
-                                        </div>
-                                        <div class='d-flex'>
-                                            <h5>Wind (low): </h5>
-                                            <span id='wind-speed-low'></span>
-                                        </div>
-                                    </div>
-                                   
-                                </div>
-                            </div>                            
-                        </div>
+                    <div class="box col-md-8 col-12 mx-auto text-center card">
+                        <table class='table table-stripe '>
+                                                <thead>
+                                                    <tr>
+                                                        <th colspan='5'>
+                                                            <div class='d-flex justify-content-around'>
+                                                            <div id='prev-day' class='text-primary'> |<< </div>
+                                                            <span id='forecast-title'></span>
+                                                            <div id='next-day' class='text-primary'> >> </div>
+                                                            </div>
+                                                        </th>                                                    
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td id='forecast' colspan='5'></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class='text-left'>Humidity</th>
+                                                        <th>high :</th>
+                                                        <td id='humidity-high'></td>
+                                                        <th>low :</th>
+                                                        <td id='humidity-low'></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class='text-left'>Temperature</th>
+                                                        <th>high :</th>
+                                                        <td id='temperature-high'></td>
+                                                        <th>low :</th>
+                                                        <td id='temperature-low'></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class='text-left'>Wind Direction</th>
+                                                        <td id='wind-direction' colspan='4'></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class='text-left'>Wind Speed</th>
+                                                        <th>high :</th>
+                                                        <td id='wind-speed-high'></td>
+                                                        <th>low :</th>
+                                                        <td id='wind-speed-low'></td>
+                                                    </tr>
+                                                </tbody>
+
+                                            </table>
                     </div>
-                    
-                    
                 </div>
             </div>
-        </div>
-        
-    
+
+
     </main>
 
 

@@ -26,13 +26,13 @@ function getTemp(callback) {
     })
 }
 function displayDailyForecast( day ) {
-  document.getElementById("forecast-title").innerHTML=tempData[day].date
+  document.getElementById("forecast-title").innerHTML="Weather Forecast for date : " +tempData[day].date
   document.getElementById("forecast").innerHTML=tempData[day].forecast
   document.getElementById("humidity-high").innerHTML=tempData[day].relative_humidity.high
   document.getElementById("humidity-low").innerHTML=tempData[day].relative_humidity.low
   document.getElementById("temperature-high").innerHTML=tempData[day].temperature.high
   document.getElementById("temperature-low").innerHTML=tempData[day].temperature.low
-  document.getElementById("wind-direction").innerHTML=tempData[day].wind.direction
+  document.getElementById("wind-direction").innerHTML="The wind will be blowing in the "+tempData[day].wind.direction+" direction"
   document.getElementById("wind-speed-high").innerHTML=tempData[day].wind.speed.high
   document.getElementById("wind-speed-low").innerHTML=tempData[day].wind.speed.low
 
@@ -61,7 +61,7 @@ getForecast( function(data) {
 })
 
 $ (function () {
-  $('#prev-day').hide();
+  // $('#prev-day').hide();
   
   // Set the date of today to be displayed
   var d = new Date();
@@ -93,9 +93,12 @@ $ (function () {
       tempData.count ++ ;
       displayDailyForecast(tempData.count)
       if (tempData.count >= 3) {
-        $('#next-day').hide()
+        // $('#next-day').hide()
       } 
-      $('#prev-day').show()
+      $('#prev-day').text('<<')
+    }
+    else {
+      $('#next-day').text('>>|')
     }
   })
   
@@ -104,9 +107,9 @@ $ (function () {
       tempData.count -- ;
       displayDailyForecast(tempData.count)
       if (tempData.count <= 0 ) {
-        $('#prev-day').hide()
+        $('#next-day').text(">>")
       } 
-      $('#next-day').show()
+      $('#prev-day').text('|<<')
     }
   })
 })
