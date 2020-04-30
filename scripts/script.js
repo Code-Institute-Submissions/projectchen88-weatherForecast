@@ -57,6 +57,8 @@ getForecast( function(data) {
 })
 
 $ (function () {
+  
+  // Set the date of today to be displayed
   var d = new Date();
   var weekday = new Array(7);
   weekday[0] = "Sunday";
@@ -66,10 +68,10 @@ $ (function () {
   weekday[4] = "Thursday";
   weekday[5] = "Friday";
   weekday[6] = "Saturday";
-      
   var strDate = weekday[d.getDay()] + " : " + d.getDate() + " Day " + (d.getMonth()+1) + " Month " + d.getFullYear() + " Year " ;
   $('#dateToday').text(strDate)
   
+  // Detect for change in option change in selection of area and display the weather
   $('#select').change(function(){
     // displayWeather()
     let forecastsArea = forecastData.items[0].forecasts
@@ -80,4 +82,14 @@ $ (function () {
     }
   })
   
+  // Detect for change to view. forecast for next day
+  var dateCount = 0 // Set count as 0 to represent today
+  
+  $('#next-day').on('click', function () {
+    alert ("next day")
+  })
+  
+  $('#prev-day').on('click', function () {
+    alert ("previous day")
+  })
 })
