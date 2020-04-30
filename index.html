@@ -9,6 +9,8 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--Custom CSS-->
     <link rel="stylesheet" href="styles/style.css" type="text/css" />
     <title>Hello, world!</title>
@@ -40,8 +42,8 @@
                                     <option>Where ?</option>
                                 </select>
                             </div>
-                            <div class='display-box p-5 bg-secondary'>
-                                <h1 id='weather' class='font-bolder text-light'></h1>   
+                            <div class='display-box p-2 bg-secondary'>
+                                <p><span id='weather' class='font-bolder text-light'></span></p>   
                             </div>                            
                         </div>
                     </div>
@@ -49,17 +51,47 @@
                     <!--Display 4 days forecast-->
                     <div class="box col-md-8 col-12 mx-auto text-center">
                         <div class="box p-5 bg-light rounded">
-                            <h5>Next 4 days Forecast</h5>
-                            <div class='display-box p-5'>
+                            <div class='display-box'>
                                 <div class="row">
-                                    <div class="col-3"> Today's Forecast : 
+                                    <div class="col-5"> 
+                                        <div class='d-flex justify-content-center'>
+                                            <a id='left' href=""><< &nbsp</a>
+                                            <h5> Today's Forecast : </h5>
+                                            <a id= 'right' href=""> &nbsp >> </a>
+                                        </div>
                                         <span id='forecast'></span>
                                     </div>
-                                    <div class="col-3"> 
-                                        <span id='humidity'></span>
+                                    <div class="col-7"> 
+                                        <div class='d-flex'>
+                                            <h5>Humidity High: </h5>
+                                            <span id='humidity-high'></span>
+                                        </div>
+                                        <div class='d-flex'>
+                                            <h5>Humidity Low: </h5>
+                                            <span id='humidity-low'></span>
+                                        </div>
+                                        <div class='d-flex'>
+                                            <h5>Temperature (high): </h5>
+                                            <span id='temperature-high'></span>
+                                        </div>
+                                        <div class='d-flex'>
+                                            <h5>Temperature (low): </h5>
+                                            <span id='temperature-low'></span>
+                                        </div>
+                                        <div class='d-flex'>
+                                            <h5>Wind (direction): </h5>
+                                            <span id='wind-direction'></span>
+                                        </div>                                        
+                                        <div class='d-flex'>
+                                            <h5>Wind (high): </h5>
+                                            <span id='wind-speed-high'></span>
+                                        </div>
+                                        <div class='d-flex'>
+                                            <h5>Wind (low): </h5>
+                                            <span id='wind-speed-low'></span>
+                                        </div>
                                     </div>
-                                    <div class="col-3"></div><span id='temperature'></span></div>
-                                    <div class="col-3"></div><span id='wind'></span></div>
+                                   
                                 </div>
                             </div>                            
                         </div>
@@ -69,7 +101,8 @@
                 </div>
             </div>
         </div>
-
+        
+    
     </main>
 
 

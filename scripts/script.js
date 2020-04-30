@@ -28,7 +28,15 @@ function getTemp(callback) {
 
 getTemp(function(data){
   tempData = data;
-  document.getElementById("forecast").innerHTML="Test"
+  
+  document.getElementById("forecast").innerHTML=tempData[0].forecast
+  document.getElementById("humidity-high").innerHTML=tempData[0].relative_humidity.high
+  document.getElementById("humidity-low").innerHTML=tempData[0].relative_humidity.low
+  document.getElementById("temperature-high").innerHTML=tempData[0].temperature.high
+  document.getElementById("temperature-low").innerHTML=tempData[0].temperature.low
+  document.getElementById("wind-direction").innerHTML=tempData[0].wind.direction
+  document.getElementById("wind-speed-high").innerHTML=tempData[0].wind.speed.high
+  document.getElementById("wind-speed-low").innerHTML=tempData[0].wind.speed.low
   
 })
 
@@ -68,7 +76,7 @@ $ (function () {
     for (let item in forecastsArea) {
       var select = $('#select').val()
       if (select == forecastsArea[item].area)
-      $('#weather').text(forecastsArea[item].forecast)
+      $('#weather').text("The weather at "+ forecastsArea[item].area +" is expected to be "+forecastsArea[item].forecast)
     }
   })
   
