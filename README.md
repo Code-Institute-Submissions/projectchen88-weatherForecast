@@ -1,14 +1,32 @@
-         ___        ______     ____ _                 _  ___  
-        / \ \      / / ___|   / ___| | ___  _   _  __| |/ _ \ 
-       / _ \ \ /\ / /\___ \  | |   | |/ _ \| | | |/ _` | (_) |
-      / ___ \ V  V /  ___) | | |___| | (_) | |_| | (_| |\__, |
-     /_/   \_\_/\_/  |____/   \____|_|\___/ \__,_|\__,_|  /_/ 
- ----------------------------------------------------------------- 
+# PROJECT NAME : WEATHER FORECAST (SINGAPORE)
 
+    This is my 2nd project to display the weather of the SINGPAORE forecast of temperature and humidity from the details
+    
+# UX
 
-Hi there! Welcome to AWS Cloud9!
+    It will display the data display of the local weather. Easy to navigate and information is easy to understand.
+    
+# TECHNOLOGIES USED
 
-To get started, create some files, play with the terminal,
-or visit https://docs.aws.amazon.com/console/cloud9/ for our documentation.
+    * HTML
+    * CSS
+    * Javascript
+    * JQUERY
+    * BOOTSTRAP
 
-Happy coding!
+ # TESTING
+
+    Testing - This is being tested with chrome , safari and internet edge. 
+    Mobile responsiveness is tested for screen size 1440px , 768px , 425px  
+    Testing for the accuracy of the information is verified through manual verfication of downloaded information.
+    Method used : console.log of the downloaded information verified with displayed information.
+    
+# DEPLOYMENT
+
+    The website is deployed on Github 
+    Regular commits are made and once finalised.
+    To deploy the page, go to the settings>Github pages and set the source to "Main Branch"
+
+# CREDIT
+
+    w3school and stackoverflow for providing the answers when I meet with blocks in the projects
